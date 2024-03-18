@@ -1,0 +1,21 @@
+<h1 class="text-center my-2">Posts</h1>
+<hr>
+<button class="btn btn-primary" routerLink="add-post">Add Post</button>
+<table class="my-4 table table-light table-hover table-bordered table-striped">
+    <thead>
+        <tr class="border-bottom">
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col" style="width: 20%;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of posts$ | async">
+            <td class="w-25">{{post.id}}</td>
+            <td>{{post.title}}</td>
+            <td>{{post.description}}</td>
+            <td><a routerLink="edit-post/post.id" class="me-3">Edit Post</a>&nbsp;<a href="">Delete Post</a></td>
+        </tr>        
+    </tbody>
+</table>

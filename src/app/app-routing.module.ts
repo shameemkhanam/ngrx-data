@@ -12,18 +12,9 @@ const routes: Routes = [
     path:'', component:HomeComponent
   },
   {
-    path:'posts', component:PostsListComponent,
-    resolve: {posts:PostsResolver}
-  },
-  {
-    path:'posts/add-post', component:AddPostComponent
-  },
-  {
-    path:'posts/edit-post/:id', component:EditPostComponent
-  },
-  {
-    path:'posts/details/:id', component:SinglePostComponent
-  }
+    path:'posts',
+    loadChildren: ()=> import('./posts/posts.module').then(m => m.PostsModule)
+  }  
 ];
 
 @NgModule({

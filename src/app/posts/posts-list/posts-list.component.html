@@ -15,7 +15,11 @@
             <td class="w-25">{{post.id}}</td>
             <td>{{post.title}}</td>
             <td>{{post.description}}</td>
-            <td><a routerLink="edit-post/post.id" class="me-3">Edit Post</a>&nbsp;<a href="">Delete Post</a></td>
+            <td><a routerLink="edit-post/{{post.id}}" class="me-3">Edit</a>&nbsp;
+                <a href="" (click)="onDelete($event, post.id)" class="me-3">Delete</a>&nbsp;
+                <a routerLink="details/{{post.id}}">View</a>
+
+            </td>
         </tr>        
     </tbody>
 </table>

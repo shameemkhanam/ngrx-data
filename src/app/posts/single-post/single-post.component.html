@@ -1,1 +1,8 @@
-<p>single-post works!</p>
+<div class="container mt-4">
+    <h3>Post Details</h3>
+    <div *ngIf="post">
+        <div>ID : {{post.id}}</div>
+        <div>TITLE : {{post.title}}</div>
+        <div>DESCRIPTION : {{post.description}}</div>
+    </div>
+</div>
